@@ -43,11 +43,19 @@ public class TestConfig implements CommandLineRunner{
 		Category cat3 = new Category(null, "Computers");
 		categoryRepository.saveAll (Arrays.asList(cat1, cat2, cat3));
 		
-		Product p1 = new Product (null, "The Lord of the Rings", "Game Excellent", 90.5, "");
+		Product p1 = new Product (null, "The Lord of the Rings", "Epic Book", 90.5, "");
 		Product p2 = new Product (null, "Smart TV", "TV Excellent.", 2190.0, "");
 		Product p3 = new Product (null, "Macbook Pro", "Top Apple PC ", 1250.0, "");
 		Product p4 = new Product (null, "PC Gamer", "The Best PC Gamer", 1200.0, "");
 		Product p5 = new Product(null, "Rails for Dummies", "Book special for childs", 100.99, "");
+		productRepository.saveAll (Arrays.asList(p1, p2, p3,p4,p5));
+		
+		p1.getCategories().add(cat2);
+		p2.getCategories().add(cat1);
+		p2.getCategories().add(cat3);
+		p3.getCategories().add(cat3);
+		p4.getCategories().add(cat3);
+		p5.getCategories().add(cat2);
 		productRepository.saveAll (Arrays.asList(p1, p2, p3,p4,p5));
 		
 		
