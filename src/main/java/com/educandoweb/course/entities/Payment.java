@@ -12,6 +12,8 @@ import javax.persistence.MapsId;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table (name= "tb_payment")
 public class Payment implements Serializable { 
@@ -24,6 +26,8 @@ public class Payment implements Serializable {
 	
 	@OneToOne
 	@MapsId
+//  Acrescentei esse JsonIgnore antes do professor achar... Ele não tinha testado no JSON... Order\1 - deu loop (Glória a Deus)... Aprendendo...
+	@JsonIgnore
 	private Order order;
 	
 	public Payment() {
