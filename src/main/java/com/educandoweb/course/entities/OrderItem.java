@@ -41,7 +41,7 @@ public class OrderItem implements Serializable {
 		id.setOrder(order);
 	}
 
-// 	@JsonIgnore (Verificar quais pedidos tem o produto) - Alterado no Product antes do getOrders()
+// 	@JsonIgnore (Verificar quais pedidos tem o produto) - Alterado no Product antes do getOrder()
 	public Product getProduct() {
 		return id.getProduct();
 	}
